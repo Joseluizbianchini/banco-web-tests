@@ -24,5 +24,8 @@
   "homepage": "https://github.com/Joseluizbianchini/banco-web-tests#readme",
   "devDependencies": {
     "cypress": "^14.5.1"
+  },
+  "dependencies": {
+    "cypress-mochawesome-reporter": "^4.0.2"
   }
 }
