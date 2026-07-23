@@ -7,8 +7,10 @@ describe('Login', () => {
 
   it('Login com dados válidos deve permitir entrada no sistema', () => {
     // Act
-    cy.get('#username').click().type('julio.lima')
-    cy.get('#senha').click().type('123456')
+    cy.fixture('credenciais').then(({ credenciais }) => {
+      cy.get('#username').click().type(credenciais.usuario)
+      cy.get('#senha').click().type(credenciais.senha)
+    })
     cy.screenshot('apos-preencher-dados-validos')
     cy.contains('button', 'Entrar').click()
     cy.screenshot('apos-clicar-no-botao-entrar')
